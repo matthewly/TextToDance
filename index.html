@@ -9,43 +9,73 @@
           background-size: cover;
       }
 
+      #frame {
+        width: 100%;
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
       .img-wrapper {
           width: 100%;
           position: absolute;
-          top: 180px;
+          top: 90px;
       }
 
       img {
           margin: 0 auto;
           display: block;
       }
+
+      footer {
+          width: 100%;
+          position: absolute;
+          text-align: center;
+          top: 550px;
+      }
     </style>
   </head>
   <body>
     <div class="img-wrapper">
+      <h3 id="frame">Woo</h3>
       <img src="./images/frame1.jpg">
     </div> 
 
-      
-
+    <footer>
+      <h3>Text "1", "2", "3", or "4" to</h3>
+      <h1>(925) 230-2223</h1>
+    </footer>
+    
     <!-- SOCKET.IO -->
     <script src="/socket.io/socket.io.js"></script>
 	  <script>
     		var socket = io();
     		socket.on('text', function (frame) {
             console.log(frame);
-      		  if (frame == 1)
+            
+      		  if (frame == 1) {
               $('img').attr('src', './images/frame1.jpg');
-            else if (frame == 2)
+              $('#frame').text("Woo");
+            }
+
+            else if (frame == 2) {
               $('img').attr('src', './images/frame2.jpg');
-            else if (frame == 3)
+              $('#frame').text("Yeah");
+            }
+            
+            else if (frame == 3) {
               $('img').attr('src', './images/frame3.jpg');
-            else
+              $('#frame').text("Ayy");
+            }
+            
+            else {
               $('img').attr('src', './images/frame4.jpg');
+              $('#frame').text("Oof");
+            }
         });
 	  </script>
 
     <!-- JQUERY -->
-    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="     crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="     crossorigin="anonymous"></script>
   </body>
 </html>
