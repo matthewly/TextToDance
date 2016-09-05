@@ -1,0 +1,25 @@
+{
+  "name": "TwilioDance",
+  "version": "0.0.1",
+  "description": "Matt and Anthony's Twilio Dance Stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Keydex/TwilioDance.git"
+  },
+  "author": "Anthony Pham and Matthew Ly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keydex/TwilioDance/issues"
+  },
+  "homepage": "https://github.com/Keydex/TwilioDance",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.0",
+    "express": "^4.14.0",
+    "socket.io": "^1.4.8"
+  }
+}

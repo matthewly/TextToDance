@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Twilio Dance</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    client side
+    <script src="/socket.io/socket.io.js"></script>
+	<script>
+  		var socket = io();
+  		socket.on('text', function (data) {
+    		console.log(data);
+		});
+	</script>
+  </body>
+</html>
