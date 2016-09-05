@@ -1,19 +1,51 @@
 <!doctype html>
 <html>
   <head>
-    <title>Twilio Dance</title>
+    <title>Text to Dance</title>
     <style>
+      body {
+          background-image: url("images/dancefloor.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
 
+      .img-wrapper {
+          width: 100%;
+          position: absolute;
+          top: 180px;
+      }
+
+      img {
+          margin: 0 auto;
+          display: block;
+      }
     </style>
   </head>
   <body>
-    client side
+    <div class="img-wrapper">
+      <img src="./images/frame1.jpg">
+    </div> 
+
+      
+
+    <!-- SOCKET.IO -->
     <script src="/socket.io/socket.io.js"></script>
-	<script>
-  		var socket = io();
-  		socket.on('text', function (data) {
-    		console.log(data);
-		});
-	</script>
+	  <script>
+    		var socket = io();
+    		socket.on('text', function (frame) {
+            console.log(frame);
+      		  if (frame == 1)
+              $('img').attr('src', './images/frame1.jpg');
+            else if (frame == 2)
+              $('img').attr('src', './images/frame2.jpg');
+            else if (frame == 3)
+              $('img').attr('src', './images/frame3.jpg');
+            else
+              $('img').attr('src', './images/frame4.jpg');
+        });
+	  </script>
+
+    <!-- JQUERY -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="     crossorigin="anonymous"></script>
   </body>
 </html>

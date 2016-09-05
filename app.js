@@ -1,4 +1,5 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
@@ -9,7 +10,8 @@ var credentials = require('./auth.js')
 var accountSid = credentials.sid;
 var authToken = credentials.token;
 
-//test
+app.use(express.static(__dirname));
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
